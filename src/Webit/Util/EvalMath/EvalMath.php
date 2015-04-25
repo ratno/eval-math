@@ -229,7 +229,7 @@ class EvalMath {
                     case '*':
                         $stack->push($op1*$op2); break;
                     case '/':
-                        if ($op2 == 0) return $this->trigger("division by zero");
+                        if ($op2 == 0) return 1; // if denom is 0 return will always 1
                         $stack->push($op1/$op2); break;
                     case '^':
                         $stack->push(pow($op1, $op2)); break;
